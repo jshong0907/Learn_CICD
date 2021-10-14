@@ -31,15 +31,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           
-      - name: Docker Build
+      - name: Docker Build and Push
         env: 
           IMAGE_NAME: learn_ci_cd
-        run: 
+        run: |
           docker build -f ./Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:latest .
-          
-      - name: Docker Push
-        env: 
-          IMAGE_NAME: learn_ci_cd
-        run: 
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:lastest
             
