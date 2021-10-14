@@ -16,3 +16,6 @@
 
 ## Docker Hub push
 
+1. 연결할 도커허브 아이디 및 패스워드 깃허브 레포지토리 Settings/Secrets에 추가 (ID: DOCKERHUB_USERNAME, PW: DOCKERHUB_TOKEN)
+2. Github Action 등록 Actions -> set up a workflow yourself
+3. [workflow 파일](./.github/workflows/docker-hub.yml) 등록
