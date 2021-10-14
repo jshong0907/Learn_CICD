@@ -32,7 +32,7 @@ jobs:
         env: 
           IMAGE_NAME: learn_ci_cd
         run: 
-          docker build . -t ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME
+          docker build -f ./Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME .
           
       - name: Docker Push
         env: 
