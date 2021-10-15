@@ -1,4 +1,6 @@
-dist: focal # Ubuntu 20.04 LTS
+# https://docs.travis-ci.com/user/reference/overview/
+
+dist: focal  # Ubuntu 20.04 LTS focal | bionic | xenial | trusty | precise with xenial as default
 
 language: python
 python:
@@ -8,4 +10,4 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - pytest
+  - pytest  # test_*.py 구성의 모든 테스트 파일을 실행시킨다.
