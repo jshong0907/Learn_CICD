@@ -42,4 +42,10 @@ jobs:
         run: |
           docker build -f ./Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$VERSION .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$VERSION
+          
+      - name: GitHub Webhook
+        uses: joelwmale/webhook-action@master
+        with:
+          url: ${{ secrets.WEBHOOK_URL }}
+          body: '{"event": "deployment", "repository": "jshong0907/learn_cicd"}'
             
